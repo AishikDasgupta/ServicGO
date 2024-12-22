@@ -1,3 +1,4 @@
+// src/components/Navbar.tsx
 import { useState, useEffect } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import { Menu, X, Code2, Rocket } from 'lucide-react';
@@ -14,18 +15,16 @@ export function Navbar() {
     });
   }, [scrollY]);
 
-    // Smooth scrolling helper function
-    const handleScroll = (id: string) => {
-      const element = document.querySelector(id);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
-      // Close the mobile menu after clicking a link
-      setIsOpen(false);
-    };
+  const handleScroll = (id: string) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+    setIsOpen(false);
+  };
 
   return (
     <motion.nav
@@ -39,15 +38,12 @@ export function Navbar() {
       <div className="font-bold max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
-            {/* Conditional Icon Color */}
             <Code2 className={`h-8 w-8 ${isScrolled ? 'text-primary' : 'text-white'}`} />
-            {/* Conditional Logo Color */}
             <span className={`ml-2 text-xl font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>
               ServiceGo
             </span>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 cursor-pointer">
             {['Home', 'About', 'Services', 'Pricing', 'Contact'].map((item) => (
               <a
@@ -65,7 +61,6 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <motion.button
               className="p-2"
@@ -83,7 +78,6 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <motion.div
             className="md:hidden"

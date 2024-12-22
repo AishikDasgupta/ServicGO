@@ -1,3 +1,4 @@
+// src/components/services/Services.tsx
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Globe, Smartphone, Search, BarChart } from 'lucide-react';
@@ -40,16 +41,10 @@ export function Services() {
         variants={staggerContainer}
         initial="hidden"
         animate={inView ? "show" : "hidden"}
-        className="w-full mx-auto px-4 sm:px-6 lg:px-8"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="text-center mb-16">
-          <h2 className="text-3xl text-white font-bold mb-4">Our Services</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            We offer a wide range of digital services to help your business thrive in the modern world.
-          </p>
-        </div>
-
-        <div className="flex md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <h2 className="text-3xl font-bold text-center text-white mb-8">Our Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}

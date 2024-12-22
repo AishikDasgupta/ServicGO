@@ -1,50 +1,43 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Users, Target, Trophy } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { Users, ShieldCheck, Globe } from "lucide-react";
+
+const stats = [
+  { icon: Users, value: "100+", label: "Clients" },
+  { icon: ShieldCheck, value: "99%", label: "Satisfaction" },
+  { icon: Globe, value: "50+", label: "Countries" },
+];
 
 export function About() {
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
-  const stats = [
-    { icon: Users, label: "Happy Clients", value: "500+" },
-    { icon: Target, label: "Projects Completed", value: "1000+" },
-    { icon: Trophy, label: "Awards Won", value: "25+" },
-  ];
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   return (
-    <section id="about" className="bg-black/95 py-24">
-      <motion.div
-        ref={ref}
-        variants={staggerContainer}
-        initial="hidden"
-        animate={inView ? "show" : "hidden"}
-        className="w-full h-full mx-auto px-4 sm:px-6 lg:px-8"
-      >
-        <motion.div variants={fadeInUp} className="text-center mb-16">
-          <h2 className="text-3xl text-white font-bold mb-4">About Us</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            We're a team of passionate developers and marketers dedicated to
-            helping businesses grow in the digital age.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-8">
+    <section id="about" ref={ref} className="py-16 bg-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          className="text-3xl font-bold text-center mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          About Us
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
-            <motion.div key={index} variants={fadeInUp}>
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-                <stat.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
-                <h3 className="text-4xl font-bold mb-2">{stat.value}</h3>
-                <p className="text-muted-foreground">{stat.label}</p>
-              </Card>
+            <motion.div
+              key={index}
+              className="p-6 text-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <stat.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
+              <h3 className="text-4xl font-bold mb-2">{stat.value}</h3>
+              <p className="text-muted-foreground">{stat.label}</p>
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

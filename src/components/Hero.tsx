@@ -1,10 +1,11 @@
+// src/components/Hero.tsx
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
   return (
-    <section id="home" className=" w-full min-h-screen bg-black flex items-center">
+    <section id="home" className="w-full min-h-screen bg-black flex items-center">
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
