@@ -8,7 +8,7 @@ const services = [
   {
     icon: Globe,
     title: 'Web Development',
-    description: 'Custom websites and web applications built with modern technologies.',
+    description: 'Custom websites and web apps built with modern technologies.',
   },
   {
     icon: Smartphone,
