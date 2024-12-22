@@ -43,7 +43,7 @@ export function Navbar() {
             <Code2 className={`h-8 w-8 ${isScrolled ? 'text-primary' : 'text-white'}`} />
             {/* Conditional Logo Color */}
             <span className={`ml-2 text-xl font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>
-              TechCRM
+              ServiceGo
             </span>
           </div>
 
