@@ -28,7 +28,7 @@ export function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-screen z-50 transition-all duration-300 ${
         isScrolled ? 'bg-background/80 backdrop-blur-md shadow-md' : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -37,6 +37,7 @@ export function Navbar() {
     >
       <div className="font-bold max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
+          {/* Left Section: Logo */}
           <div className="flex items-center">
             <Code2 className={`h-8 w-8 ${isScrolled ? 'text-primary' : 'text-white'}`} />
             <span className={`ml-2 text-xl font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>
@@ -44,6 +45,7 @@ export function Navbar() {
             </span>
           </div>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 cursor-pointer">
             {['Home', 'About', 'Services', 'Pricing', 'Contact'].map((item) => (
               <a
@@ -56,11 +58,12 @@ export function Navbar() {
                 {item}
               </a>
             ))}
-            <Button>
+            <Button className="flex items-center">
               <Rocket className={`mr-2 h-4 w-4 ${isScrolled ? 'text-foreground' : 'text-white'}`} /> Get Started
             </Button>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <motion.button
               className="p-2"
@@ -78,6 +81,7 @@ export function Navbar() {
           </div>
         </div>
 
+        {/* Mobile Menu Items */}
         {isOpen && (
           <motion.div
             className="md:hidden"
