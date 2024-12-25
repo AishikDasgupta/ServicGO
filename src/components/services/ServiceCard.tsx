@@ -20,7 +20,7 @@ export function ServiceCard({ icon: Icon, title, description }: ServiceCardProps
           </div>
           <CardTitle className="mb-2 group-hover:text-primary transition-colors">{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
-          <Button variant="ghost" className="group bg-black text-white hover:text-black mt-4 p-0 hover:bg-transparent">
+          <Button variant="gradient" className="group bg-black text-white hover:text-black mt-4 p-0 hover:bg-transparent">
             Learn More 
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
