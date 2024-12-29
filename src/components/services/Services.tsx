@@ -1,30 +1,30 @@
 // src/components/services/Services.tsx
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import { Globe, Smartphone, Search, BarChart } from 'lucide-react';
-import { ServiceCard } from './ServiceCard';
 import { staggerContainer } from '@/lib/animations';
 
 const services = [
   {
     icon: Globe,
     title: 'Web Development',
-    description: 'Custom websites and web apps built with modern technologies.',
+    description: 'Custom websites and web applications built with modern technologies.',
   },
   {
     icon: Smartphone,
     title: 'App Development',
-    description: 'Native and cross-platform mobile applications for iOS and Android.',
+    description: 'Native and cross-platform mobile applications for both iOS and Android.',
   },
   {
     icon: Search,
     title: 'SEO Optimization',
-    description: 'Improve your search rankings and drive organic traffic to your website.',
+    description: 'Improve your search rankings and drive more organic traffic to your website.',
   },
   {
     icon: BarChart,
     title: 'Digital Marketing',
-    description: 'Comprehensive digital marketing strategies to grow your business.',
+    description: 'Comprehensive digital marketing strategies to grow your business faster.',
   },
 ];
 
@@ -35,7 +35,7 @@ export function Services() {
   });
 
   return (
-    <section id="services" className="bg-black/95 py-24">
+    <section id="services" className="bg-gradient-to-r from-bg-darkBlue to-bg-dark py-24">
       <motion.div
         ref={ref}
         variants={staggerContainer}
@@ -43,12 +43,62 @@ export function Services() {
         animate={inView ? "show" : "hidden"}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <h2 className="text-3xl font-bold text-center text-white mb-8">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.h2
+          className="text-4xl font-extrabold text-center text-primary-foreground mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+          transition={{ duration: 0.6 }}
+        >
+          Our Services
+        </motion.h2>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+        >
           {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+            <motion.div
+              key={index}
+              className="p-6 bg-gradient-to-br from-primary to-primary-teal rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <service.icon className="w-12 h-12 text-accent mb-2" />
+                <h3 className="text-xl font-semibold text-neutral-light">
+                  {service.title}
+                </h3>
+                <p className="text-text-muted">{service.description}</p>
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* See All Services Button 
+        <div className="mt-12 flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <Link
+              to="/services"
+              className="px-6 py-3 bg-primary hover:bg-primary-dark text-neutral-light font-semibold rounded-lg shadow-md transition-colors"
+            >
+              See All Services
+            </Link>
+          </motion.div>
+        </div>*/}
       </motion.div>
     </section>
   );
