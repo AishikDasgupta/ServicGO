@@ -1,7 +1,7 @@
 // src/components/services/Services.tsx
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+//import { Link } from 'react-router-dom'; // Import Link for navigation
 import { Globe, Smartphone, Search, BarChart } from 'lucide-react';
 import { staggerContainer } from '@/lib/animations';
 
