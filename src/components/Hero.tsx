@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link as ScrollLink } from "react-scroll"; // Import ScrollLink
 
 export function Hero() {
   return (
@@ -33,33 +33,35 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl text-white font-extrabold tracking-tight mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl text-white text-center font-extrabold tracking-tight mb-6"
           >
             Transform Your Business with
             <span className="bg-gradient-to-r from-white/80 to-white/10 bg-clip-text text-transparent">
-              {' '}
+              {" "}
               Modern Solutions
             </span>
           </motion.h1>
 
           {/* Subtitle */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6 text-lg sm:text-xl text-white/80 max-w-3xl mx-auto lg:mx-0"
+            className="flex items-center justify-center"
           >
-            Elevate your business with our comprehensive CRM solutions. From web
-            development to digital marketing, we provide the tools you need to
-            succeed in the digital age.
-          </motion.p>
+            <motion.p className="text-lg sm:text-xl text-white/80 text-center max-w-3xl">
+              Elevate your business with our comprehensive CRM solutions. From
+              web development to digital marketing, we provide the tools you
+              need to succeed in the digital age.
+            </motion.p>
+          </motion.div>
 
           {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center "
           >
             {/* Smooth Scroll to Pricing */}
             <ScrollLink
