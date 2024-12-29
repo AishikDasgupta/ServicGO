@@ -1,7 +1,7 @@
 // src/components/services/Services.tsx
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-//import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import { Globe, Smartphone, Search, BarChart } from 'lucide-react';
 import { staggerContainer } from '@/lib/animations';
 
@@ -84,7 +84,7 @@ export function Services() {
           ))}
         </motion.div>
 
-        {/* See All Services Button 
+        {/* See All Services Button*/}
         <div className="mt-12 flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -98,7 +98,7 @@ export function Services() {
               See All Services
             </Link>
           </motion.div>
-        </div>*/}
+        </div>
       </motion.div>
     </section>
   );
