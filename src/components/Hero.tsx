@@ -1,4 +1,3 @@
-// src/components/Hero.tsx
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -62,22 +61,41 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <Button
-              variant="gradient"
-              size="lg"
-              className="group flex items-center justify-center px-8 py-4"
+            {/* Smooth Scroll to Pricing */}
+            <ScrollLink
+              to="pricing"
+              smooth={true}
+              duration={800}
+              offset={-80} // Adjust to account for fixed headers if needed
+              className="group"
             >
-              Get Started
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="group flex items-center justify-center px-8 py-4"
+              <Button
+                variant="gradient"
+                size="lg"
+                className="group flex items-center justify-center px-8 py-4 cursor-pointer"
+              >
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </ScrollLink>
+
+            {/* Smooth Scroll to Services */}
+            <ScrollLink
+              to="services"
+              smooth={true}
+              duration={800}
+              offset={-80} // Adjust to account for fixed headers if needed
+              className="group"
             >
-              Explore Services
-              <Sparkles className="ml-2 h-5 w-5 transition-transform group-hover:rotate-12" />
-            </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="group flex items-center justify-center px-8 py-4 cursor-pointer"
+              >
+                Explore Services
+                <Sparkles className="ml-2 h-5 w-5 transition-transform group-hover:rotate-12" />
+              </Button>
+            </ScrollLink>
           </motion.div>
         </motion.div>
       </div>
