@@ -34,35 +34,36 @@ interface RadarDataPoint {
 
 interface LineDataPoint {
   name: string;
-  uv: number;
+  before: number;
+  after: number;
 }
 
 const radialBarData: DataPoint[] = [
-  { name: "Web Dev", uv: 31, fill: "#8884d8" },
-  { name: "App Dev", uv: 26, fill: "#83a6ed" },
-  { name: "Marketing", uv: 43, fill: "#8dd1e1" },
-  { name: "Other", uv: 15, fill: "#82ca9d" },
+  { name: "Web Dev", uv: 39, fill: "#8884d8" },
+  { name: "App Dev", uv: 41, fill: "#83a6ed" },
+  { name: "Marketing", uv: 40, fill: "#8dd1e1" },
+  { name: "Other", uv: 45, fill: "#82ca9d" },
 ];
 
 const radarData: RadarDataPoint[] = [
-  { subject: "Innovation", A: 120, B: 110, fullMark: 150 },
-  { subject: "Efficiency", A: 98, B: 130, fullMark: 150 },
-  { subject: "Reliability", A: 86, B: 130, fullMark: 150 },
+  { subject: "Innovation", A: 98, B: 130, fullMark: 150 },
+  { subject: "Efficiency", A: 110, B: 130, fullMark: 150 },
+  { subject: "Reliability", A: 106, B: 130, fullMark: 150 },
   { subject: "Speed", A: 99, B: 100, fullMark: 150 },
-  { subject: "Support", A: 85, B: 90, fullMark: 150 },
+  { subject: "Support", A: 105, B: 90, fullMark: 150 },
 ];
 
 const lineChartData: LineDataPoint[] = [
-  { name: "Jan", uv: 400 },
-  { name: "Feb", uv: 300 },
-  { name: "Mar", uv: 500 },
-  { name: "Apr", uv: 200 },
-  { name: "May", uv: 600 },
+  { name: "Jan", before: 200, after: 140 },
+  { name: "Feb", before: 300, after: 300 },
+  { name: "Mar", before: 500, after: 600 },
+  { name: "Apr", before: 300, after: 390 },
+  { name: "May", before: 600, after: 780 },
 ];
 
 const style = {
   top: "50%",
-  right: 0,
+  right: -90,
   transform: "translate(0, -50%)",
   lineHeight: "24px",
 };
@@ -124,7 +125,7 @@ export const StatsSection = () => {
             }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-lg font-semibold text-neutral-light mb-4">
+            <h3 className="text-lg text-center font-semibold text-neutral-light mb-4">
               Project Distribution
             </h3>
             <RadialBarChart
@@ -133,7 +134,7 @@ export const StatsSection = () => {
               cx="50%"
               cy="50%"
               innerRadius="10%"
-              outerRadius="80%"
+              outerRadius="90%"
               barSize={30}
               data={radialBarData}
             >
@@ -152,10 +153,10 @@ export const StatsSection = () => {
             }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-lg font-semibold text-neutral-light mb-4">
+            <h3 className="text-lg text-center font-semibold text-neutral-light mb-4">
               Core Metrics
             </h3>
-            <RadarChart cx={150} cy={125} outerRadius={100} width={300} height={250} data={radarData}>
+            <RadarChart cx={170} cy={125} outerRadius={100} width={500} height={250} data={radarData}>
               <PolarGrid />
               <RadarPolarAngleAxis dataKey="subject" />
               <Radar
@@ -177,15 +178,17 @@ export const StatsSection = () => {
             }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h3 className="text-lg font-semibold text-neutral-light mb-4">
+            <h3 className="text-lg text-center font-semibold text-neutral-light mb-4">
               Monthly Growth
             </h3>
-            <LineChart width={250} height={150} data={lineChartData}>
+            <LineChart width={300} height={250} data={lineChartData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
-              <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+              <Line type="monotone" dataKey="before" stroke="#8884d8" />
+              <Line type="monotone" dataKey="after" stroke="#82ca9d" /> 
+              <Legend />
             </LineChart>
           </motion.div>
         </motion.div>

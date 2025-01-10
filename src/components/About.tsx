@@ -4,7 +4,7 @@ import { Users, ShieldCheck, Globe } from "lucide-react";
 const stats = [
   { icon: Users, value: "100+", label: "Clients" },
   { icon: ShieldCheck, value: "99%", label: "Satisfaction" },
-  { icon: Globe, value: "50+", label: "Countries" },
+  { icon: Globe, value: "5+", label: "Countries" },
 ];
 
 export function About() {
@@ -34,13 +34,13 @@ export function About() {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="text-center p-8 bg-gradient-to-r from-primary to-primary-teal shadow-xl rounded-lg hover:shadow-2xl transition-shadow"
+                className="text-center p-8  shadow-xl rounded-lg hover:shadow-2xl transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
               >
                 <div className="mb-6">
-                  <stat.icon className="w-16 h-16 text-accent mx-auto" />
+                  <stat.icon className="w-16 h-16 text-primary mx-auto" />
                 </div>
                 <h3 className="text-4xl text-neutral-light font-semibold">
                   {stat.value}

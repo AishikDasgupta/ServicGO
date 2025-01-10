@@ -1,4 +1,3 @@
-// src/components/services/Services.tsx
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom'; // Import Link for navigation
@@ -40,7 +39,7 @@ export function Services() {
         ref={ref}
         variants={staggerContainer}
         initial="hidden"
-        animate={inView ? "show" : "hidden"}
+        animate={inView ? 'show' : 'hidden'}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <motion.h2
@@ -54,7 +53,7 @@ export function Services() {
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           initial="hidden"
-          animate={inView ? "show" : "hidden"}
+          animate={inView ? 'show' : 'hidden'}
           variants={{
             hidden: { opacity: 0 },
             show: {
@@ -68,7 +67,7 @@ export function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="p-6 bg-gradient-to-br from-primary to-primary-teal rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
+              className="p-6 bg-gradient-to-br from-primary to-secondary-teal rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -84,16 +83,16 @@ export function Services() {
           ))}
         </motion.div>
 
-        {/* See All Services Button*/}
+        {/* See All Services Button with Hover Ripple Effect */}
         <div className="mt-12 flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 1.6, delay: 1.9 }}
           >
             <Link
               to="/services"
-              className="px-6 py-3 bg-primary hover:bg-primary-dark text-neutral-light font-semibold rounded-lg shadow-md transition-colors"
+              className="ripple-button px-6 py-3 bg-primary hover:bg-white text-neutral-light hover:text-black font-semibold rounded-lg shadow-md transition-colors"
             >
               See All Services
             </Link>
