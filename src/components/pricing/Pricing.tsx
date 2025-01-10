@@ -5,33 +5,34 @@ import { staggerContainer } from '@/lib/animations';
 
 const plans = [
   {
-    name: 'Starter',
-    price: '$99',
+    name: 'Basic',
+    price: 'Free',
     description: 'Perfect for small businesses',
     features: [
-      { text: 'Basic Web Development', included: true },
+      { text: 'Web Development', included: true },
       { text: 'SEO Optimization', included: true },
       { text: 'Social Media Integration', included: true },
-      { text: 'Custom App Development', included: false },
-      { text: 'Advanced Analytics', included: false },
+      { text: 'AI Integration', included: true },
+      { text: 'Basic Analytics', included: false },
     ],
   },
   {
-    name: 'Professional',
+    name: 'Pro',
     price: '$199',
     description: 'Ideal for growing companies',
     features: [
       { text: 'Advanced Web Development', included: true },
       { text: 'SEO Optimization', included: true },
       { text: 'Social Media Integration', included: true },
-      { text: 'Basic App Development', included: true },
-      { text: 'Basic Analytics', included: true },
+      { text: 'Advanced App Development', included: true },
+      { text: 'AI Integration', included: false },
+      { text: 'Advanced Analytics', included: true },
     ],
     popular: true,
   },
   {
-    name: 'Enterprise',
-    price: '$399',
+    name: 'Custom',
+    price: 'Variable',
     description: 'For large organizations',
     features: [
       { text: 'Custom Web Development', included: true },

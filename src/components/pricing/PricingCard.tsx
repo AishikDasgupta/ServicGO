@@ -33,7 +33,7 @@ export function PricingCard({ name, price, description, features, popular }: Pri
           <p className="text-muted-foreground">{description}</p>
           <div className="mt-4">
             <span className="text-4xl font-bold">{price}</span>
-            <span className="text-muted-foreground">/month</span>
+            {/* <span className="text-muted-foreground">/month</span> */}
           </div>
         </CardHeader>
         <CardContent className="space-y-4">

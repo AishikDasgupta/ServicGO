@@ -1,6 +1,6 @@
 // src/pages/ServicesPage.tsx
 import { motion } from 'framer-motion';
-import { Globe, Smartphone, Search, BarChart, Share2, Calendar, ClipboardList, LayoutDashboard, Barcode } from 'lucide-react';
+import { Globe, Smartphone, Search, BarChart, Share2, Calendar, ClipboardList, LayoutDashboard, Barcode, Book , Briefcase } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 const services = [
@@ -14,6 +14,7 @@ const services = [
       We ensure scalability, speed, and security so your site is future-proof.
     `,
   },
+
   {
     icon: Smartphone,
     title: 'App Development',
@@ -89,7 +90,31 @@ const services = [
       efficient monitoring, and better decision-making.
     `,
   },
+  {
+    icon: Book,
+    title: 'Management Systems',
+    description: `
+      Build and manage online learning platforms with ease. 
+      Our LMS solutions cater to educational institutions, 
+      corporate training, and individual educators. 
+      Features include course creation, user management, 
+      and analytics for tracking learning outcomes.
+    `,
+  },
+  {
+    icon: Briefcase,
+    title: 'Business Consultation',
+    description: `
+      Unlock growth with tailored business strategies. 
+      We provide market analysis, financial planning, 
+      and operational efficiency improvements. 
+      Perfect for startups or established businesses 
+      aiming to scale and stay competitive.
+    `,
+  },
+
 ];
+
 
 export default function ServicesPage() {
   const [ref, inView] = useInView({

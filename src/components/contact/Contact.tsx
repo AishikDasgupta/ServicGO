@@ -40,7 +40,7 @@ export function Contact() {
       >
         <div className="text-center mb-16">
           <h2 className="text-3xl text-white font-bold mb-4">Get in Touch</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-white max-w-2xl mx-auto">
             Have a question or want to work together? We'd love to hear from you.
           </p>
         </div>

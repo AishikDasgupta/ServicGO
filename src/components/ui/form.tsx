@@ -78,7 +78,14 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn('space-y-2', className)} {...props} />
+      <div
+        ref={ref}
+        className={cn(
+          'space-y-4 bg-black text-light-gray rounded-lg p-4 shadow-md',
+          className
+        )}
+        {...props}
+      />
     </FormItemContext.Provider>
   );
 });
@@ -93,7 +100,11 @@ const FormLabel = React.forwardRef<
   return (
     <Label
       ref={ref}
-      className={cn(error && 'text-destructive', className)}
+      className={cn(
+        'text-light-gray text-sm font-medium',
+        error && 'text-red-500',
+        className
+      )}
       htmlFor={formItemId}
       {...props}
     />
@@ -104,7 +115,7 @@ FormLabel.displayName = 'FormLabel';
 const FormControl = React.forwardRef<
   React.ElementRef<typeof Slot>,
   React.ComponentPropsWithoutRef<typeof Slot>
->(({ ...props }, ref) => {
+>(({ className, ...props }, ref) => {
   const { error, formItemId, formDescriptionId, formMessageId } =
     useFormField();
 
@@ -118,6 +129,11 @@ const FormControl = React.forwardRef<
           : `${formDescriptionId} ${formMessageId}`
       }
       aria-invalid={!!error}
+      className={cn(
+        'w-full rounded-md bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none p-3',
+        error && 'ring-red-500',
+        className
+      )}
       {...props}
     />
   );
@@ -134,7 +150,10 @@ const FormDescription = React.forwardRef<
     <p
       ref={ref}
       id={formDescriptionId}
-      className={cn('text-[0.8rem] text-muted-foreground', className)}
+      className={cn(
+        'text-sm text-gray-400',
+        className
+      )}
       {...props}
     />
   );
@@ -156,7 +175,10 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn('text-[0.8rem] font-medium text-destructive', className)}
+      className={cn(
+        'text-sm font-medium text-red-500',
+        className
+      )}
       {...props}
     >
       {body}
