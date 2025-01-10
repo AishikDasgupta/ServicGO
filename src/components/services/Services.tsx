@@ -88,7 +88,7 @@ export function Services() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-            transition={{ duration: 1.6, delay: 1.9 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
           >
             <Link
               to="/services"
