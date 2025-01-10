@@ -123,7 +123,7 @@ export const StatsSection = () => {
               hidden: { opacity: 0, y: 20 },
               show: { opacity: 1, y: 0 },
             }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }}
           >
             <h3 className="text-lg text-center font-semibold text-neutral-light mb-4">
               Project Distribution
@@ -176,7 +176,7 @@ export const StatsSection = () => {
               hidden: { opacity: 0, y: 20 },
               show: { opacity: 1, y: 0 },
             }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-lg text-center font-semibold text-neutral-light mb-4">
               Monthly Growth
