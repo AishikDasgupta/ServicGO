@@ -59,7 +59,7 @@ export function About() {
             transition={{ duration: 0.8 }}
           >
             <video
-              src="src/assets/Animation - 1737563635203.webm"
+              src="src/assets/about_animation.webm"
               className="w-11/12 h-1/3 object-cover rounded-lg"
               autoPlay
               loop
