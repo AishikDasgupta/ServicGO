@@ -42,7 +42,7 @@ export function Navbar() {
           {/* Left Section: Logo */}
           <div className="flex items-center">
             <img
-              src="src/assets/logo 3.png"
+              src="src/assets/logo%203.png"
               className={`h-20 w-20 pt-2 ${
                 isScrolled ? "text-primary" : "text-white"
               }`}
