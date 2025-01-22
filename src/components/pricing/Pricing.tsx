@@ -18,7 +18,7 @@ const plans = [
   },
   {
     name: 'Pro',
-    price: '$199',
+    price: '$99',
     description: 'Ideal for growing companies',
     features: [
       { text: 'Advanced Web Development', included: true },

@@ -14,7 +14,7 @@ export function Hero() {
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1736535454280-cce60b687886?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+            'url("https://img.freepik.com/free-photo/panoramic-view-dubai-city-illuminated-neon-spectrum_23-2151305340.jpg?t=st=1737107611~exp=1737111211~hmac=0d1449bfdbc3cf1ca746a65fe26763a44e115f640db8e4080b993da2ae2ada7c&w=826")',
         }}
       >
         <div className="absolute inset-0 bg-black/50" /> {/* Overlay */}

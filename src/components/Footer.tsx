@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center">
               <Code2 className="h-6 w-6 text-white" />
-              <span className="ml-2 text-lg text-white font-bold">TechCRM</span>
+              <span className="ml-2 text-lg text-white font-bold">GrowwInfinity</span>
             </div>
             <p className="text-white">
               Transforming businesses with modern solutions.
@@ -47,8 +47,8 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
-          <p>&copy; {currentYear} TechCRM. All rights reserved. Made with by Aishik Dasgupta</p>
+        <div className="border-t border-border mt-12 pt-8 text-center text-gray-400/80">
+          <p>&copy; {currentYear} GrowwInfinity. All rights reserved. Made by Aishik Dasgupta</p>
         </div>
       </div>
     </footer>

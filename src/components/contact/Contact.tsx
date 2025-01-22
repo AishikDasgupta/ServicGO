@@ -9,17 +9,17 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    details: 'hello@techcrm.com',
+    details: 'support@growwinfinity.com',
   },
   {
     icon: Phone,
     title: 'Call Us',
-    details: '+1 (555) 123-4567',
+    details: '+6 (142) 517-8253, +91 (906) 287-8517',
   },
   {
     icon: MapPin,
     title: 'Location',
-    details: 'San Francisco, CA',
+    details: '81 Pitt st, West Footscray, VIC-3012, Melbourne, Australia',
   },
 ];
 

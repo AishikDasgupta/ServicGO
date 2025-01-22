@@ -51,16 +51,22 @@ export function About() {
           </div>
         </div>
 
-        {/* Right Column - Image */}
+        {/* Right Column - Video */}
         <div className="lg:w-1/2 mt-12 lg:mt-0 lg:ml-12">
-          <motion.img
-            src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Business team working"
-            className="w-full h-full object-cover rounded-lg shadow-xl border border-border"
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-          />
+          >
+            <video
+              src="src/assets/Animation - 1737563635203.webm"
+              className="w-11/12 h-1/3 object-cover rounded-lg"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </motion.div>
         </div>
       </div>
     </section>

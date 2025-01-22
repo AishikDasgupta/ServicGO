@@ -18,6 +18,16 @@ interface PricingCardProps {
 }
 
 export function PricingCard({ name, price, description, features, popular }: PricingCardProps) {
+    // Razorpay custom link (replace with the actual link)
+    const razorpayLink = "https://rzp.io/rzp/5IvDWU5p";
+
+    // Redirect function
+    const handleButtonClick = () => {
+      if (popular) {
+        window.location.href = razorpayLink; // Redirect to Razorpay link for popular option
+      }
+      // You can add any other logic here for the non-popular option if needed
+    };
   return (
     <motion.div variants={fadeInUp}>
       <Card className={`relative overflow-hidden transition-all duration-300 hover:shadow-xl ${
@@ -51,6 +61,7 @@ export function PricingCard({ name, price, description, features, popular }: Pri
             className="w-full group" 
             variant={popular ? "gradient" : "outline"}
             size="lg"
+            onClick={handleButtonClick}
           >
             Get Started
             {popular ? (
