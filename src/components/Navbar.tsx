@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
 import { Menu, X, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "../../public/main_logo.png"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +43,7 @@ export function Navbar() {
           {/* Left Section: Logo */}
           <div className="flex items-center">
             <img
-              src="src/components/main_logo.png"
+              src={logo}
               className={`h-20 w-20 pt-2 ${
                 isScrolled ? "text-primary" : "text-white"
               }`}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, ShieldCheck, Globe } from "lucide-react";
+import animation from "../../public/about_animation.webm"
 
 const stats = [
   { icon: Users, value: "100+", label: "Clients" },
@@ -59,7 +60,7 @@ export function About() {
             transition={{ duration: 0.8 }}
           >
             <video
-              src="src/components/about_animation.webm"
+              src={animation}
               className="w-11/12 h-1/3 object-cover rounded-lg"
               autoPlay
               loop
