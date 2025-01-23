@@ -37,8 +37,8 @@ function App() {
         <Route path="/services" element={<ServicesPage />} />
       </Routes>
       <FloatingWhatsApp
-        phoneNumber= "+919062878517"
-        accountName= "ServiceGO"
+        phoneNumber= "+61425178253"
+        accountName= "GrowwInfinity"
         notificationSound= {true}
         allowClickAway={true}
         allowEsc={true}
