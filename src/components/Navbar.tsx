@@ -1,13 +1,14 @@
-// src/components/Navbar.tsx
 import { useState, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
-import { Menu, X, Rocket } from "lucide-react";
+import { Menu, X, Rocket, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "../../public/main_logo.png"
+import { Link } from "react-router-dom"; // Import Link for routing
+import logo from "../../public/main_logo.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for dropdown
   const { scrollY } = useScroll();
 
   useEffect(() => {
@@ -49,17 +50,20 @@ export function Navbar() {
               }`}
               alt="GrowwInfinity Logo"
             />
+            <Link to="/" className="text-white font-bold hover:text-white/80 cursor-pointer">
             <span
               className={`ml-[-18px] text-2xl font-bold ${
                 isScrolled ? "text-foreground" : "text-white"
               }`}
             >
+              
               GrowwInfinity
             </span>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8 cursor-pointer">
+          <div className="hidden font-semibold md:flex items-center space-x-8 cursor-pointer">
             {["Home", "About", "Services", "Pricing", "Contact"].map((item) => (
               <a
                 key={item}
@@ -73,6 +77,41 @@ export function Navbar() {
                 {item}
               </a>
             ))}
+
+            {/* Dropdown for "Our Mission" and "Our Vision" */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
+              <Link
+                to="#"
+                className={`flex items-center space-x-1 ${
+                  isScrolled
+                    ? "text-foreground/80 hover:text-foreground"
+                    : "text-white hover:text-white/80"
+                }`}
+              >
+                Know more
+                <ChevronDown className="h-4 w-4" />
+              </Link>
+              {isDropdownOpen && (
+                <div className="absolute right-0 mt-2 bg-background/95 shadow-md rounded-md py-2 w-48 group-hover:block transition-all delay-400">
+                  <Link
+                    to="/our-mission"
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    Our Mission
+                  </Link>
+                  <Link
+                    to="/our-vision"
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    Our Vision
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -122,6 +161,21 @@ export function Navbar() {
                   </a>
                 )
               )}
+              {/* Mobile Dropdown Links */}
+              <div className="border-t border-gray-200 mt-2 pt-2">
+                <Link
+                  to="/our-mission"
+                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-accent"
+                >
+                  Our Mission
+                </Link>
+                <Link
+                  to="/our-vision"
+                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-accent"
+                >
+                  Our Vision
+                </Link>
+              </div>
               <Button className="w-full mt-4">
                 <Rocket className="mr-2 h-4 w-4" /> Get Started
               </Button>
