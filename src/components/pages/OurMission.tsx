@@ -82,7 +82,7 @@ const MissionPage: React.FC = () => {
             className="flex justify-center items-center"
           >
             <img
-              src="src/assets/mission_2.png"
+              src="public/mission_1.png"
               alt="Mission Image"
               className="rounded-lg"
             />
@@ -99,7 +99,7 @@ const MissionPage: React.FC = () => {
             className="flex justify-center items-center"
           >
             <img
-              src="src/assets/mission_1.png"
+              src="public/mission_2.png"
               alt="Growth Image"
               className="rounded-lg"
             />

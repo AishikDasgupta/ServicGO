@@ -81,7 +81,7 @@ const VisionPage: React.FC = () => {
             className="flex justify-center items-center"
           >
             <img
-              src="src/assets/vision_1.png"
+              src="public/vision_1.png"
               alt="Vision Image"
               className="rounded-lg"
             />
@@ -98,7 +98,7 @@ const VisionPage: React.FC = () => {
             className="flex justify-center items-center"
           >
             <img
-              src="src/assets/vision_2.png"
+              src="public/vision_2.png"
               alt="Growth Image"
               className="rounded-lg"
             />
