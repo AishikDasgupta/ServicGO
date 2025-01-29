@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { motion } from "framer-motion";
+import vision_1 from "../../../public/vision_1.png"
+import vision_2 from "../../../public/vision_2.png"
 
 const marketGrowthData = [
   { name: "Current", potential: 100 },
@@ -81,7 +83,7 @@ const VisionPage: React.FC = () => {
             className="flex justify-center items-center"
           >
             <img
-              src="public/vision_1.png"
+              src={vision_2}
               alt="Vision Image"
               className="rounded-lg"
             />
@@ -98,7 +100,7 @@ const VisionPage: React.FC = () => {
             className="flex justify-center items-center"
           >
             <img
-              src="public/vision_2.png"
+              src={vision_1}
               alt="Growth Image"
               className="rounded-lg"
             />

@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { motion } from "framer-motion";
+import mision_1 from "../../../public/mission_1.png";
+import mision_2 from "../../../public/mission_2.png";
 
 const growthData = [
   { name: "Jan", growth: 40 },
@@ -82,7 +84,7 @@ const MissionPage: React.FC = () => {
             className="flex justify-center items-center"
           >
             <img
-              src="public/mission_1.png"
+              src={mision_1}
               alt="Mission Image"
               className="rounded-lg"
             />
@@ -99,7 +101,7 @@ const MissionPage: React.FC = () => {
             className="flex justify-center items-center"
           >
             <img
-              src="public/mission_2.png"
+              src={mision_2}
               alt="Growth Image"
               className="rounded-lg"
             />
