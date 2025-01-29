@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
 import { Menu, X, Rocket, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom"; // Import Link for routing
+import { Link } from "react-router-dom"; 
 import logo from "../../public/main_logo.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for dropdown
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
   const { scrollY } = useScroll();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export function Navbar() {
       className={`fixed w-screen z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background/80 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+          : "bg-[#026bbcc5]"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -45,14 +45,14 @@ export function Navbar() {
           <div className="flex items-center">
             <img
               src={logo}
-              className={`h-20 w-20 pt-2 ${
+              className={`h-auto w-[90px] pt-4 ${
                 isScrolled ? "text-primary" : "text-white"
               }`}
               alt="GrowwInfinity Logo"
             />
             <Link to="/" className="text-white font-bold hover:text-white/80 cursor-pointer">
             <span
-              className={`ml-[-18px] text-2xl font-bold ${
+              className={`ml-[-25px] text-[21px] font-bold ${
                 isScrolled ? "text-foreground" : "text-white"
               }`}
             >

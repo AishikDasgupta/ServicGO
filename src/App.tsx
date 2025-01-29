@@ -21,7 +21,6 @@ function Home() {
       <Services />
       <Pricing />
       <Contact />
-      <Footer />
     </main>
   );
 }
@@ -48,6 +47,7 @@ function App() {
         notification={true}
         darkMode={true}
       />
+      <Footer />
     </Router>
   );
 }

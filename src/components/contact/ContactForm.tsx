@@ -71,7 +71,7 @@ export function ContactForm() {
         />
       </div>
       <Button type="submit" className="w-full md:w-auto">
-        Send Message
+        Book a Demo
         <Send className="ml-2 h-4 w-4" />
       </Button>
     </motion.form>

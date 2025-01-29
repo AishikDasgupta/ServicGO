@@ -1,4 +1,3 @@
-import { Code2 } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,8 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center">
-              <Code2 className="h-6 w-6 text-white" />
-              <span className="ml-2 text-lg text-white font-bold">GrowwInfinity</span>
+              <span className="text-lg text-white font-bold">GrowwInfinity</span>
             </div>
             <p className="text-white">
               Transforming businesses with modern solutions.

@@ -1,0 +1,19 @@
+.sliderContainer {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    background:transparent;
+    padding: 20px 0;
+  }
+  
+  .slider {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .logo {
+    height: 40px; 
+    filter: brightness(0.8); 
+  }
+  

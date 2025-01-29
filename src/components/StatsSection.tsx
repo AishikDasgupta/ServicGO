@@ -18,6 +18,7 @@ import {
 } from "recharts";
 
 import { staggerContainer } from "@/lib/animations"; // Import staggerContainer for consistent animations
+import InfiniteSlider from "./brands/infiniteslider";
 
 interface DataPoint {
   name: string;
@@ -192,6 +193,20 @@ export const StatsSection = () => {
             </LineChart>
           </motion.div>
         </motion.div>
+        {/* Infinite Slider - Centered and Responsive */}
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-16 w-full flex justify-center items-center"
+          >
+            <div className="w-full max-w-4xl"> 
+              <h1 className="text-xl text-center font-semibold text-neutral-light mb-4">
+                brands worked with
+              </h1>
+              <InfiniteSlider />
+            </div>
+          </motion.div>
       </motion.div>
     </section>
   );

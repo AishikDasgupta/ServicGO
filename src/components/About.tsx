@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, ShieldCheck, Globe } from "lucide-react";
-import animation from "../../public/about_animation.webm"
+import animation from "../../public/about_animation.webm";
 
 const stats = [
   { icon: Users, value: "100+", label: "Clients" },
