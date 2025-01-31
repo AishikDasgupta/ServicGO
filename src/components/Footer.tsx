@@ -38,15 +38,16 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-4">Legal</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-white">Privacy Policy</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-white">Terms of Service</a></li>
+              <li><a href="https://www.termsfeed.com/live/ffab7da2-0548-4f4b-b9f7-e6c95b65eed5" className="text-muted-foreground hover:text-white">Privacy Policy</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-white">Terms and Conditions</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-white">Cookie Policy</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-white">Refund Policy</a></li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-border mt-12 pt-8 text-center text-gray-400/80">
-          <p>&copy; {currentYear} GrowwInfinity. All rights reserved. Made by Aishik Dasgupta</p>
+          <p>&copy; {currentYear} GrowwInfinity. All rights reserved. Owned by Mallik Enterprise</p>
         </div>
       </div>
     </footer>
