@@ -59,7 +59,7 @@ export function PricingCard({ name, price, description, features, popular }: Pri
         <CardFooter>
           <Button 
             className="w-full group" 
-            variant={popular ? "gradient" : "outline"}
+            variant={popular ? "gradient" : "link"}
             size="lg"
             onClick={handleButtonClick}
           >
